@@ -12,7 +12,7 @@ This is a robust, clean-architecture Spring Boot backend application built for a
 
 ## 📖 Documentation & Architecture
 
-For a complete breakdown of the system design, architectural decisions, and the reasoning behind specific implementations (like DTOs and `@Transactional`), please read the **[Design & Implementation Document](documentation.md)**.
+For a complete breakdown of the system design, architectural decisions, and the reasoning behind specific implementations, please read the **[Design & Implementation Document](documentation.md)**.
 
 ## 🗄️ Database Configuration
 
@@ -23,16 +23,7 @@ You must configure your database credentials before running the application. The
 
 Inside this file, locate the `DataSource` section and update the `URL`, `username`, and `password` to match your local database environment:
 
-```properties
-# ─────────────────────────────────────────────────────────────
-# DataSource Configuration
-# ─────────────────────────────────────────────────────────────
-spring.datasource.url=jdbc:mysql://localhost:3306/ecommerce_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
-spring.datasource.username=root
-spring.datasource.password=your_database_password_here
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-```
-*(Note: If the `ecommerce_db` database does not exist, the driver will automatically attempt to create it. If you prefer to use Oracle as per the spec alternative, simply replace the MySQL driver and URL accordingly).*
+
 
 The database schema, including tables and relationships, is automatically generated and managed by **Hibernate (Spring Data JPA)** upon application startup. Additionally, `data.sql` will automatically seed default roles (`USER`, `ADMIN`) upon startup.
 
